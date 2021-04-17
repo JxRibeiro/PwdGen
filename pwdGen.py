@@ -1,41 +1,41 @@
 import string
 import random
 
-pwdUpper = string.ascii_uppercase #Letras maiusculas ABC...
-pwdLower = string.ascii_lowercase #Letras minusculas abc...
-pwdDigits = string.digits #Numeros 0123456789
+pwdUpper = string.ascii_uppercase #Upper letters ABC...
+pwdLower = string.ascii_lowercase #Lower letters abc...
+pwdDigits = string.digits #Numbers 0123456789
 pwdPunc = string.punctuation #!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-pwdTest = []
-print('##########################')
-print('#   Gerador de senhas    #')
-print('#------------------------#')
-print('#    Escolha os tipo     #')
-print('#------------------------#')
-print('# (1) Letras maiusculas  #')
-print('# ABCDEFGHIJKLMNOPQR...  #')
-print('# (2) Letras minusculas  #')
-print('# abcdefghijklmnopqr...  #')
-print('# (3) Números            #')
-print('# 0123456789             #')
-print('# (4) Pontuação          #')
-print('# !#$%&''()*+,-./:;<=....  #')
-print('##########################')
 
-pwdEscolha = input('Digite sua escolha (ex 123 ou 124):\n')
-tam = int(input('Qual o tamanho da senha? \n'))
+print('###########################')
+print('#   Password Generator    #')
+print('#-------------------------#')
+print('#    Choose complexity    #')
+print('#-------------------------#')
+print('# (1) Upper Letters       #')
+print('# ABCDEFGHIJKLMNOPQRS...  #')
+print('# (2) Lowe Letters        #')
+print('# abcdefghijklmnopqrs...  #')
+print('# (3) Numbers             #')
+print('# 0123456789              #')
+print('# (4) Punctuation         #')
+print('# !#$%&''()*+,-./:;<=...    #')
+print('###########################')
+
+choice = input('Enter with complexity (12 or 124): ')
+size = int(input('Size: '))
 
 pwdChars = ''
 pwd = []
-escPwd = []
-if '1' in pwdEscolha:
+if '1' in choice:
     pwdChars = pwdChars + pwdUpper
-if '2' in pwdEscolha:
+if '2' in choice:
     pwdChars = pwdChars + pwdLower
-if '3' in pwdEscolha:
+if '3' in choice:
     pwdChars = pwdChars + pwdDigits
-if '4' in pwdEscolha:
+if '4' in choice:
     pwdChars = pwdChars + pwdPunc
 
-for i in range(tam):
+for i in range(size):
       pwd.append(random.choice(pwdChars))
 print(''.join(pwd))
+
