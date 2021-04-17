@@ -38,4 +38,3 @@ if '4' in choice:
 for i in range(size):
       pwd.append(random.choice(pwdChars))
 print(''.join(pwd))
-
